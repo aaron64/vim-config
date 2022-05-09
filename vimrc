@@ -2,6 +2,7 @@ call plug#begin()
 Plug 'terryma/vim-multiple-cursors'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'sickill/vim-monokai'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -20,7 +21,6 @@ set cursorline
 set updatetime=100
 
 set laststatus=2
-set noshowmode
 
 set incsearch
 
@@ -35,3 +35,11 @@ set encoding=utf-8
 
 set wrap
 set tabstop=4
+
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+map <F2> :NERDTreeFocus<CR>
+map <F3> :NERDTreeToggle<CR>
