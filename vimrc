@@ -13,11 +13,16 @@ let g:indent_guides_enable_on_vim_startup = 1
 set undofile
 set undodir=~/.vim/undo
 set undolevels=1000
+filetype on
+
+set cursorline
 
 set updatetime=100
 
 set laststatus=2
 set noshowmode
+
+set incsearch
 
 syntax enable
 colorscheme monokai
