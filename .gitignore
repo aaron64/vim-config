@@ -1,8 +1,9 @@
 *
 
 !.gitignore
-!.vimrc
+!vimrc
 
-!.vim/
-!.vim/*
-.vim/undo
+!vim/
+!vim/colors/
+!vim/colors/*
+!vim/*
