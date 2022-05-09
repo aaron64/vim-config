@@ -11,10 +11,10 @@ exit 0
 }
 
 CLEAN=0
-while getopts ":c:h" o; do
+while getopts "ch" o; do
 	case "${o}" in
 		c)
-			c=1;;
+			CLEAN=1;;
 		h)
 			usage;;
 	esac
@@ -29,6 +29,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 if [ $CLEAN -eq 1 ]; then
+	echo "Cleaning..."
 	cd ..
 	rm -rf vim-config
 fi
